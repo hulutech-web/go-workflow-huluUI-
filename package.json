@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode dev",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -20,6 +20,7 @@
     "@vitejs/plugin-vue": "^4.5.2",
     "sass": "^1.70.0",
     "sass-loader": "^14.0.0",
+    "unplugin-auto-import": "^0.17.3",
     "vite": "^5.0.8"
   }
 }

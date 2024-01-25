@@ -1,17 +1,47 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Dashboard from '@/views/Dashboard.vue'
-import Design from "@/views/Design.vue"
 import Layout from '@/layout/admin.vue'
 
-// 2. 定义一些路由
-// 每个路由都需要映射到一个组件。
-// 我们后面再讨论嵌套路由。
+import Dashboard from '@/views/procdef/Dashboard.vue'
+import DesignIns from '@/views/procdef/designIns.vue'
+import Design from "@/views/procdef/Design.vue"
+import Preview from '@/views/procdef/Preview.vue'
+
+import Start from '@/views/procstart/start.vue'
+
+import MyApprove from '@/views/procappr/myapprove.vue'
+import Task from '@/views/procappr/task.vue'
+import WithDraw from '@/views/procappr/withdraw.vue'
+
+
+import HistoryAppr from '@/views/prochistory/historyAppr.vue'
+import NextAppr from '@/views/prochistory/nextAppr.vue'
+import StartAppr from '@/views/prochistory/startAppr.vue'
+
 const routes = [
     {
         path: "/", component: Layout,
         children: [
             { path: '/dashboard', component: Dashboard },
             { path: '/design', component: Design },
+            { path: '/designIns', component: DesignIns },
+            { path: '/preview/:id', component: Preview },
+            { path: '/start', component: Start },
+            { path: '/myapprove', component: MyApprove },
+            {
+                path: "/task", component: Task
+            },
+            {
+                path: "/withdraw", component: WithDraw
+            },
+            {
+                path: "/historyappr", component: HistoryAppr
+            },
+            {
+                path: "/nextappr", component: NextAppr
+            },
+            {
+                path: "/startappr", component: StartAppr
+            },
         ]
     }
 ]

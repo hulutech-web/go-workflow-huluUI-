@@ -66,7 +66,7 @@
               class="ant-select ant-select-enabled"
               style="min-width: 150px;"
             >
-              <div class="ant-input-number-input-wrap">
+              <div class="ant-input-number-input-wrap" style="border: 1px solid #ddd;">
                 <input
                   v-model="properties1.actionerRules[0].labelNames"
                   class="ant-input-number-input"

@@ -83,9 +83,9 @@ export default {
       transform: 1
     },
     data1: {
-      userid: "11025",
-      name: '请假',
-      company: "达州葫芦科技",
+      userid: "",
+      name: '',
+      company: "",
       node: {
         name: '发起人',
         type: 'start',
@@ -100,9 +100,12 @@ export default {
   watch: {
     data: {
       handler(val) {
-        this.data1 = val
+        this.data1.userid = val.userid
+        this.data1.name = val.name
+        this.data1.company = val.company
       },
-      deep: true
+      deep: true,
+      immediate:true
     }
   },
   mounted() {
@@ -166,12 +169,15 @@ export default {
       this.zoomValue = zv
       this.zoomStyle = { transform: `scale(${zv / 100})` }
     },
-    navBack(){
+    navBack() {
       router.go(-1)
     }
-  }
+  },
+  expose: ["initialNode", "iteratorData"]
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style>
+@import '@/assets/style.css';
+</style>
